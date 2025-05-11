@@ -23,9 +23,9 @@ The compiler check the code syntax,usages of variables and functions,and so on.
 **This is the most frequent source of errors when building**.
 
 ### 3.Assemble
-> .ASM--------->.OBJ  
+> .ASM--------->.OBJ(program object file)  
 
-The assembly code translate into machine code,producing an object file for the target platform
+The assembly code translate into machine code by the compiler,producing an object file for the target platform
 
 ## Tips
 
@@ -36,4 +36,16 @@ The assembly code translate into machine code,producing an object file for the t
 `By the way,submit a change in Engine,that's need to rebuild the engine,because this change file may be widely cited.`
 
 ### 4.Link
+> .OBJ(program object file)+.OBJ(external libraries)--------->.EXE
 
+The linker combine multiple object files into a single executeable file
+
+It gathers all the object files generated from program and any external object files in file system.
+
+> .EXE----runtime link----.DLL
+
+when exe is run,dll will be linked by external function stub
+
+A program fail to start due to a missing dll,the program depends on the dll find some of its missing code.
+
+Load dll in order to connect those stubs with the real code.
